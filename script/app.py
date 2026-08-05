@@ -28,6 +28,12 @@ st.markdown("""
     Enter customer details below to predict whether
     they are likely to churn.
 """)
+st.info(
+    "ℹ️ **Demo only:** this form uses a simplified set of inputs and "
+    "does not include every feature the model was trained on. "
+    "Predictions are for demonstration purposes, not real business decisions.",
+    icon="ℹ️"
+)
 st.divider()
 
 # ── Input Form ────────────────────────────────────────────
@@ -94,6 +100,7 @@ if st.button("🔮 Predict Churn", type="primary"):
 
     # Display result
     st.subheader("Prediction Result")
+    st.caption("⚠️ Simplified demo prediction — not based on full customer profile.")
 
     if churn_prob > 0.6:
         st.error(f"⚠️ HIGH CHURN RISK — {churn_prob*100:.1f}% probability")
